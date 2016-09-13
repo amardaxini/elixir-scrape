@@ -21,7 +21,7 @@ defmodule Scrape.Util.Stopwords do
   for list <- File.ls!(Path.join([__DIR__, "stopwords"])) do
     for line <- File.stream!(Path.join([__DIR__,"stopwords",list]),[],:line) do
       word = String.strip line
-      defp filter([ unquote(word)|>Stemmer.stem | rest ], words), do: filter(rest, words)
+      defp filter([ unquote(word) | rest ], words), do: filter(rest, words)
     end
   end
 
