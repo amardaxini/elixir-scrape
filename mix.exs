@@ -17,7 +17,7 @@ defmodule Scrape.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :httpoison, :tzdata]]
+    [applications: [:logger, :httpoison, :tzdata,:stemmer]]
   end
 
   # Dependencies can be Hex packages:
@@ -36,6 +36,7 @@ defmodule Scrape.Mixfile do
       {:codepagex,  "~> 0.1.2"}, # iconv written in pure elixir
       {:timex,      "~> 2.2.1"}, # date/time processing
       {:parallel,   "~> 0.0.3"}, # easy parallel processing
+      {:stemmer, "~> 1.0"}, #Stemmer used in stop words
       {:dogma,      "~> 0.1.6", only: :dev} # static code linter
     ]
   end
@@ -51,7 +52,7 @@ defmodule Scrape.Mixfile do
       files: ["lib", "mix.exs", "README.md", "LICENSE.txt"],
       maintainers: ["Maximilian Stroh"],
       licenses: ["LGPLv3"],
-      links: %{"GitHub" => "https://github.com/Anonyfox/elixir-scrape"}
+      links: %{"GitHub" => "https://github.com/amardaxini/elixir-scrape"}
     ]
   end
 end
